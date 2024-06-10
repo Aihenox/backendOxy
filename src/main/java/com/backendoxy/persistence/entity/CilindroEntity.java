@@ -26,6 +26,6 @@ public class CilindroEntity {
     private String tamaño;
     private String material;
     @ManyToOne
-    @JoinColumn(name = "id_cliente, insertable = false, updatable= false")
-    private ClienteEntity cliente;
+    @JoinColumn(name = "id_lote")
+    private LoteEntity lote;
 }
