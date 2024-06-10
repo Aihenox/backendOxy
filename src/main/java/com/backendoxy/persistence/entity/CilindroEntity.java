@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,16 +16,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class CilindroEntity {
 
     @Id
     @Column(name= "id_cilindro")
     private Integer idCilindro;
     private String propiedad;
-    private int tamaño;
+    private String tamaño;
     private String material;
-    
     @ManyToOne
-    @JoinColumn(name = "id_cliente, insertable = flase, updatable= false")
+    @JoinColumn(name = "id_cliente, insertable = false, updatable= false")
     private ClienteEntity cliente;
 }
