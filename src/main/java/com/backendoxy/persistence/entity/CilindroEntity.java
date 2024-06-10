@@ -1,7 +1,5 @@
 package com.backendoxy.persistence.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +25,4 @@ public class CilindroEntity {
     private String propiedad;
     private int tamaño;
     private String material;
-    @DateTimeFormat (pattern = "MM/yyyy")
-    private DateTimeFormat fechaph;
 }
