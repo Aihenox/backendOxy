@@ -34,7 +34,14 @@ public class CilindroEntity {
     private String tamaño;
     private String material;
     
+    @Column(name="id_cliente")
+    private Integer idCliente;
+
     @ManyToOne
     @JoinColumn(name = "id_lote", insertable=false, updatable=false)
     private LoteEntity lote;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable=false, updatable=false)
+    private ClienteEntity cliente;
 }

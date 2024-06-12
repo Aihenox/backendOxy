@@ -1,13 +1,17 @@
 package com.backendoxy.persistence.entity;
 
+import java.util.List;
+
 import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,10 +21,10 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 
 public class ClienteEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
     private Integer idCliente;
     private String nombreCliente;
@@ -29,5 +33,8 @@ public class ClienteEntity {
     private int Telefono;
     @Email (message = "No corresponde a un correo")
     private String email;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<CilindroEntity> cilindros;
 }
  

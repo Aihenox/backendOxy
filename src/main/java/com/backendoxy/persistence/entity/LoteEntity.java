@@ -28,4 +28,3 @@ public class LoteEntity {
     @OneToMany(mappedBy = "lote")
     private List<CilindroEntity> cilindros;
 }
- 
